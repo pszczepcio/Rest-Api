@@ -1,6 +1,7 @@
 package com.crud.tasks.com.crud.tasks.service;
 
 import com.crud.tasks.domain.Mail;
+import com.crud.tasks.service.SimpleEmailService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

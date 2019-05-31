@@ -1,4 +1,4 @@
-package com.crud.tasks.com.crud.tasks.service;
+package com.crud.tasks.service;
 
 import com.crud.tasks.domain.Mail;
 import org.slf4j.Logger;

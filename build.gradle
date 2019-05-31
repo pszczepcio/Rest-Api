@@ -25,14 +25,16 @@ dependencies {
 	//Swager
 	compile('io.springfox:springfox-swagger2:2.7.0')
 	compile('io.springfox:springfox-swagger-ui:2.7.0')
-	
-	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
-	compile ('mysql:mysql-connector-java')
-	//compile ('org.postgresql:postgresql')
-	compile ('org.springframework.boot:spring-boot-starter-web')
-	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
+	//email
 	compile('org.springframework.boot:spring-boot-starter-mail:1.5.7.RELEASE')
-	testCompile ('org.springframework.boot:spring-boot-starter-test')
+	//
+	compileOnly (group: 'org.projectlombok', name: 'lombok', version: '1.18.6')
+	annotationProcessor ("org.projectlombok:lombok:1.18.6")
+	runtimeOnly ('mysql:mysql-connector-java')
+	//compile ('org.postgresql:postgresql')
+	implementation ('org.springframework.boot:spring-boot-starter-web')
+	implementation ('org.springframework.boot:spring-boot-starter-data-jpa')
+	testImplementation ('org.springframework.boot:spring-boot-starter-test')
 	
 	//providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
