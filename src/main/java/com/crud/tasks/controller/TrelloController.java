@@ -27,7 +27,7 @@ public class TrelloController {
         return trelloFacade.fetchTrelloBoards();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoardsKodilla")
+    @RequestMapping(method = RequestMethod.GET, value = "/getTrelloBoardsKodilla")
     public void getTrelloBoardsKodilla(){
         List<TrelloBoardDto> trelloBoardsKodilla = trelloFacade.fetchTrelloBoards().stream()
                 .filter(trelloBoardDto -> trelloBoardDto.getName().contains("Kodilla") && trelloBoardDto.getName() != null && trelloBoardDto.getId() != null)
