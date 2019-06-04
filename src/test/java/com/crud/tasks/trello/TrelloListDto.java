@@ -11,7 +11,6 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class TrelloListDto {
-
     @Test
     public void noArgsconstructorTest(){
         //Given
