@@ -1,9 +1,9 @@
 package com.crud.tasks.scheduler;
 
-import com.crud.tasks.service.SimpleEmailService;
 import com.crud.tasks.config.AdminConfig;
 import com.crud.tasks.domain.Mail;
 import com.crud.tasks.repository.TaskRepository;
+import com.crud.tasks.service.SimpleMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class EmailScheduler {
 
     @Autowired
-    private SimpleEmailService simpleEmailService;
+    private SimpleMailService simpleMailService;
 
     @Autowired
     private TaskRepository taskRepository;
@@ -26,17 +26,17 @@ public class EmailScheduler {
     public void sendInformationEmail() {
         long size = taskRepository.count();
         if (size == 1) {
-            simpleEmailService.send(new Mail(
+            simpleMailService.send(new Mail(
                     adminConfig.getAdminMail(),
                     SUBJECT,
-                    "Currently in database you got: " + size + " task",
-                    ""));
+                    "Currently in database you got: " + size + " task"/*,
+                    ""*/));
         } else {
-            simpleEmailService.send(new Mail(
+            simpleMailService.send(new Mail(
                     adminConfig.getAdminMail(),
                     SUBJECT,
-                    "Currently in database you got: " + size + " tasks",
-                    ""));
+                    "Currently in database you got: " + size + " tasks"/*,
+                    ""*/));
         }
     }
 }
