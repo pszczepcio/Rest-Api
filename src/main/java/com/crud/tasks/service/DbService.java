@@ -26,6 +26,6 @@ public class DbService {
     }
 
     public void deleteTask(final Long id){
-        repository.delete(id);
+        repository.deleteById(id);
     }
 }
