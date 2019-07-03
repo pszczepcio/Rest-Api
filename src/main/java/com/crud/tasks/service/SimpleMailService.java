@@ -70,9 +70,6 @@ public class SimpleMailService {
             messageHelper.setText(mailCreatorService.countTaskInTrelloEmail(mail.getMessage()), true);
         };
     }
-    
-    // metoda zastąpiona przez createMimeMessage po dodaniu thymeleaf
-
 
     private SimpleMailMessage createMailMessage(final Mail mail){
         SimpleMailMessage mailMessage = new SimpleMailMessage();
