@@ -23,11 +23,13 @@ public class TrelloController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/boards")
+
     public List<TrelloBoardDto> getTrelloBoards() {
         return trelloFacade.fetchTrelloBoards();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/boards/kodilla")
+
     public void getTrelloBoardsKodilla(){
         List<TrelloBoardDto> trelloBoardsKodilla = trelloFacade.fetchTrelloBoards().stream()
                 .filter(trelloBoardDto -> trelloBoardDto.getName().contains("Kodilla") && trelloBoardDto.getName() != null && trelloBoardDto.getId() != null)
