@@ -12,6 +12,7 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
     @Override
     List<Task> findAll();
 
+    @SuppressWarnings("unchecked")
     @Override
     Task save(Task task);
 
